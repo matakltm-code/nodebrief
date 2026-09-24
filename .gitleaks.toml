@@ -1,0 +1,10 @@
+# .gitleaks.toml
+[config]
+description = "Gitleaks secret scanner configuration for NodeBrief"
+
+[allowlist]
+description = "Global allowlist for sample tokens"
+regexes = [
+  '''MY_GEMINI_API_KEY''',
+  '''MY_APP_URL'''
+]

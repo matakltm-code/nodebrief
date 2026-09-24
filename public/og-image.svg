@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090D16" />
+      <stop offset="50%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E1B4B" />
+    </linearGradient>
+
+    <!-- Accent Gradient -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF0071" />
+      <stop offset="50%" stop-color="#E11D48" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+
+    <!-- Soft Glow Filter -->
+    <filter id="cardGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="24" flood-color="#FF0071" flood-opacity="0.25" />
+    </filter>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+
+  <!-- Technical Grid Background -->
+  <g stroke="#334155" stroke-opacity="0.22" stroke-width="1.2">
+    <line x1="80" y1="0" x2="80" y2="630" />
+    <line x1="160" y1="0" x2="160" y2="630" />
+    <line x1="240" y1="0" x2="240" y2="630" />
+    <line x1="320" y1="0" x2="320" y2="630" />
+    <line x1="400" y1="0" x2="400" y2="630" />
+    <line x1="480" y1="0" x2="480" y2="630" />
+    <line x1="560" y1="0" x2="560" y2="630" />
+    <line x1="640" y1="0" x2="640" y2="630" />
+    <line x1="720" y1="0" x2="720" y2="630" />
+    <line x1="800" y1="0" x2="800" y2="630" />
+    <line x1="880" y1="0" x2="880" y2="630" />
+    <line x1="960" y1="0" x2="960" y2="630" />
+    <line x1="1040" y1="0" x2="1040" y2="630" />
+    <line x1="1120" y1="0" x2="1120" y2="630" />
+
+    <line x1="0" y1="70" x2="1200" y2="70" />
+    <line x1="0" y1="140" x2="1200" y2="140" />
+    <line x1="0" y1="210" x2="1200" y2="210" />
+    <line x1="0" y1="280" x2="1200" y2="280" />
+    <line x1="0" y1="350" x2="1200" y2="350" />
+    <line x1="0" y1="420" x2="1200" y2="420" />
+    <line x1="0" y1="490" x2="1200" y2="490" />
+    <line x1="0" y1="560" x2="1200" y2="560" />
+  </g>
+
+  <!-- Left: Branding & Value Proposition -->
+  <g transform="translate(80, 110)">
+    <!-- Badge -->
+    <g>
+      <rect width="210" height="34" rx="17" fill="#FF0071" fill-opacity="0.15" stroke="#FF0071" stroke-width="1.2" />
+      <circle cx="16" cy="17" r="4" fill="#FF0071" />
+      <text x="30" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#FF70A6" letter-spacing="1.2">SCHEMA WORKBENCH</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="56" font-weight="800" fill="#FFFFFF" letter-spacing="-1">NodeBrief Studio</text>
+
+    <!-- Subtitle / Tagline -->
+    <text x="0" y="160" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="400" fill="#94A3B8">Visual Relational Schema &amp; Node Architecture Generator</text>
+    <text x="0" y="195" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="400" fill="#64748B">Instant SQL DDL, Prisma ORM, TypeScript Interfaces &amp; JSON Schema</text>
+
+    <!-- Badges / Tech tags -->
+    <g transform="translate(0, 240)">
+      <rect x="0" y="0" width="85" height="28" rx="6" fill="#1E293B" stroke="#334155" />
+      <text x="14" y="18" font-family="monospace" font-size="12" font-weight="600" fill="#38BDF8">PostgreSQL</text>
+
+      <rect x="95" y="0" width="75" height="28" rx="6" fill="#1E293B" stroke="#334155" />
+      <text x="110" y="18" font-family="monospace" font-size="12" font-weight="600" fill="#A855F7">Prisma</text>
+
+      <rect x="180" y="0" width="95" height="28" rx="6" fill="#1E293B" stroke="#334155" />
+      <text x="194" y="18" font-family="monospace" font-size="12" font-weight="600" fill="#34D399">TypeScript</text>
+
+      <rect x="285" y="0" width="60" height="28" rx="6" fill="#1E293B" stroke="#334155" />
+      <text x="298" y="18" font-family="monospace" font-size="12" font-weight="600" fill="#F472B6">ERD</text>
+    </g>
+
+    <!-- Quick highlights -->
+    <g transform="translate(0, 310)">
+      <circle cx="6" cy="6" r="3" fill="#10B981" />
+      <text x="18" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#E2E8F0">Interactive Canvas Drag &amp; Drop</text>
+
+      <circle cx="250" cy="6" r="3" fill="#10B981" />
+      <text x="262" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#E2E8F0">Auto-Layout (Dagre Algorithm)</text>
+    </g>
+  </g>
+
+  <!-- Right: Visual Diagram Mockup Illustration -->
+  <g transform="translate(680, 100)">
+    <!-- Connection Curve 1: Node 1 to Node 2 -->
+    <path d="M 190 100 C 270 100, 270 260, 240 260" fill="none" stroke="url(#accentGrad)" stroke-width="4" stroke-dasharray="6 4" filter="url(#cardGlow)" />
+    <!-- Relationship Label Badge -->
+    <g transform="translate(240, 175)">
+      <rect x="-42" y="-12" width="84" height="24" rx="12" fill="#0F172A" stroke="#FF0071" stroke-width="1.5" />
+      <text x="0" y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#FF70A6" text-anchor="middle">has many [1:N]</text>
+    </g>
+
+    <!-- Node 1: User Table -->
+    <g transform="translate(0, 30)" filter="url(#softShadow)">
+      <rect width="210" height="150" rx="10" fill="#0F172A" stroke="#FF0071" stroke-width="2" />
+      <rect width="210" height="36" rx="10" fill="#1E293B" />
+      <!-- Header icon + Title -->
+      <circle cx="20" cy="18" r="5" fill="#FF0071" />
+      <text x="34" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">User</text>
+      <rect x="145" y="8" width="55" height="20" rx="10" fill="#10B981" fill-opacity="0.2" />
+      <text x="172" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#34D399" text-anchor="middle">Primary</text>
+      <!-- Fields -->
+      <text x="18" y="62" font-family="monospace" font-size="11" fill="#F472B6">🔑 id</text>
+      <text x="185" y="62" font-family="monospace" font-size="11" fill="#64748B" text-anchor="end">uuid</text>
+
+      <text x="18" y="90" font-family="monospace" font-size="11" fill="#E2E8F0">✉️ email</text>
+      <text x="185" y="90" font-family="monospace" font-size="11" fill="#64748B" text-anchor="end">string</text>
+
+      <text x="18" y="118" font-family="monospace" font-size="11" fill="#E2E8F0">🛡️ role</text>
+      <text x="185" y="118" font-family="monospace" font-size="11" fill="#64748B" text-anchor="end">string</text>
+    </g>
+
+    <!-- Node 2: Order Table -->
+    <g transform="translate(230, 220)" filter="url(#softShadow)">
+      <rect width="210" height="150" rx="10" fill="#0F172A" stroke="#38BDF8" stroke-width="1.8" />
+      <rect width="210" height="36" rx="10" fill="#1E293B" />
+      <!-- Header icon + Title -->
+      <circle cx="20" cy="18" r="5" fill="#38BDF8" />
+      <text x="34" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Order</text>
+      <rect x="145" y="8" width="55" height="20" rx="10" fill="#38BDF8" fill-opacity="0.2" />
+      <text x="172" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#38BDF8" text-anchor="middle">Active</text>
+      <!-- Fields -->
+      <text x="18" y="62" font-family="monospace" font-size="11" fill="#38BDF8">🔑 id</text>
+      <text x="185" y="62" font-family="monospace" font-size="11" fill="#64748B" text-anchor="end">uuid</text>
+
+      <text x="18" y="90" font-family="monospace" font-size="11" fill="#FF70A6">🔗 userId</text>
+      <text x="185" y="90" font-family="monospace" font-size="11" fill="#FF70A6" text-anchor="end">fk -&gt; User</text>
+
+      <text x="18" y="118" font-family="monospace" font-size="11" fill="#E2E8F0">💰 total</text>
+      <text x="185" y="118" font-family="monospace" font-size="11" fill="#64748B" text-anchor="end">float</text>
+    </g>
+
+    <!-- Node 3: Product Table (Floating background node) -->
+    <g transform="translate(60, 260)" opacity="0.85" filter="url(#softShadow)">
+      <rect width="150" height="100" rx="8" fill="#0B1324" stroke="#475569" stroke-width="1.2" />
+      <rect width="150" height="28" rx="8" fill="#1E293B" />
+      <text x="16" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#E2E8F0">Product</text>
+      <text x="14" y="52" font-family="monospace" font-size="10" fill="#94A3B8">• title: string</text>
+      <text x="14" y="74" font-family="monospace" font-size="10" fill="#94A3B8">• price: float</text>
+    </g>
+  </g>
+</svg>

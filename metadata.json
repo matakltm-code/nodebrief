@@ -1,0 +1,6 @@
+{
+  "name": "NodeBrief Studio",
+  "description": "Ultra-minimalist visual node diagramming and relational schema generator for engineering workflows.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

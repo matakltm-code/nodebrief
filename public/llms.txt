@@ -1,0 +1,17 @@
+# NodeBrief Studio - System Architecture & Entity Schema Modeler
+
+NodeBrief Studio is an ultra-minimalist, high-performance visual entity-relationship diagramming (ERD) and relational schema engineering studio.
+
+## Core Capabilities
+- **Visual Node Canvas**: Drag-and-drop interactive entity modeling with automatic relationship linking and cardinality controls (1:1, 1:N, M:N).
+- **Hierarchical Auto-Layout**: Built-in Dagre algorithmic layout engine for instant graph organization in horizontal (Left-to-Right) and vertical (Top-to-Bottom) orientations.
+- **Polyglot Schema Generator**: Live compilation of visual diagrams into:
+  - **SQL DDL**: PostgreSQL standard data definition queries with foreign key constraints, primary keys, and cascade actions.
+  - **Prisma Schema**: Production-ready Prisma ORM models with relation directives `@relation(fields: [...], references: [...])`.
+  - **TypeScript Interfaces**: Strongly-typed model definitions for backend APIs and frontend state management.
+  - **JSON Schema**: Draft-07 compliant specification for contract validation and API documentation.
+- **Relational Integrity**: Support for Primary Keys (PK), Foreign Keys (FK), field type specification (uuid, string, text, int, bigint, boolean, datetime, json, float), and connection reconnection.
+- **Export Formats**: One-click SQL, Prisma, TypeScript, and JSON downloads, plus SVG/PNG diagram exports.
+
+## Target Audience
+Software engineers, database administrators, system architects, and full-stack developers designing database schemas, microservice domain boundaries, and relational architectures.

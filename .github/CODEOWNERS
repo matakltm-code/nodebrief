@@ -1,0 +1,9 @@
+# Global Repository Code Owners
+*       @matakltm-code
+
+# Engine & Compiler Logic
+/src/utils/             @matakltm-code
+/src/types/             @matakltm-code
+
+# CI/CD Workflows
+/.github/workflows/     @matakltm-code

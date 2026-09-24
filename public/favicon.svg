@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF0071" />
+      <stop offset="100%" stop-color="#7928CA" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#FF0071" flood-opacity="0.35" />
+    </filter>
+  </defs>
+  
+  <!-- Modern App Icon Container -->
+  <rect width="64" height="64" rx="16" fill="#0F172A" />
+  
+  <!-- Subtle Grid Lines -->
+  <path d="M12 24H52M12 40H52M24 12V52M40 12V52" stroke="#1E293B" stroke-width="1.5" stroke-dasharray="3 3" />
+  
+  <!-- Relational Connection Edge -->
+  <path d="M22 22 C34 22, 30 42, 42 42" stroke="url(#brandGrad)" stroke-width="3" stroke-linecap="round" />
+  
+  <!-- Node A (Top-Left) -->
+  <rect x="14" y="14" width="16" height="16" rx="4.5" fill="#1E293B" stroke="#FF0071" stroke-width="2" filter="url(#glow)" />
+  <circle cx="22" cy="22" r="3" fill="#FF0071" />
+  
+  <!-- Node B (Bottom-Right) -->
+  <rect x="34" y="34" width="16" height="16" rx="4.5" fill="#1E293B" stroke="#7928CA" stroke-width="2" />
+  <circle cx="42" cy="42" r="3" fill="#A855F7" />
+  
+  <!-- Node C (Top-Right Accent) -->
+  <circle cx="44" cy="18" r="3.5" fill="#38BDF8" />
+  <path d="M30 18H40.5" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 2" />
+</svg>

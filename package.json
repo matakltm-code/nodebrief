@@ -1,0 +1,57 @@
+{
+  "name": "nodebrief",
+  "version": "1.0.0",
+  "description": "Ultra-minimalist visual node diagramming and relational schema generator for engineering workflows.",
+  "private": true,
+  "type": "module",
+  "author": "Micheal Ataklt",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matakltm-code/nodebrief.git"
+  },
+  "homepage": "https://github.com/matakltm-code/nodebrief#readme",
+  "bugs": {
+    "url": "https://github.com/matakltm-code/nodebrief/issues"
+  },
+  "scripts": {
+    "dev": "vite --port=3000 --host=0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview",
+    "clean": "rm -rf dist coverage",
+    "lint": "tsc --noEmit",
+    "test": "vitest run",
+    "test:run": "vitest run"
+  },
+  "dependencies": {
+    "@google/genai": "^2.4.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/js-yaml": "^4.0.9",
+    "@vitejs/plugin-react": "^6.1.1",
+    "@xyflow/react": "^12.11.6",
+    "dagre": "^0.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "js-yaml": "^5.4.2",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "vite": "^8.3.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/dagre": "^0.7.54",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "autoprefixer": "^10.4.21",
+    "jsdom": "^30.1.1",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.21.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.1"
+  }
+}

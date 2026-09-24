@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" class="h-full bg-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:;" />
+    <script>
+      // Prevent and suppress benign ResizeObserver loop completed notifications
+      (function() {
+        if (typeof window !== 'undefined') {
+          // Suppress global errors
+          var isResizeError = function(msg) {
+            return typeof msg === 'string' && (
+              msg.indexOf('ResizeObserver loop') !== -1 ||
+              msg.indexOf('ResizeObserver loop completed') !== -1 ||
+              msg.indexOf('ResizeObserver loop limit exceeded') !== -1
+            );
+          };
+
+          var origOnError = window.onerror;
+          window.onerror = function(message, source, lineno, colno, error) {
+            if (isResizeError(message) || (error && isResizeError(error.message))) {
+              return true;
+            }
+            if (origOnError) return origOnError.apply(this, arguments);
+          };
+
+          window.addEventListener('error', function(e) {
+            if (isResizeError(e.message) || (e.error && isResizeError(e.error.message))) {
+              e.stopImmediatePropagation();
+              e.preventDefault();
+              return true;
+            }
+          }, true);
+
+          // Wrap ResizeObserver to schedule callbacks within requestAnimationFrame
+          if (typeof window.ResizeObserver !== 'undefined') {
+            var NativeRO = window.ResizeObserver;
+            window.ResizeObserver = function(callback) {
+              return new NativeRO(function(entries, observer) {
+                window.requestAnimationFrame(function() {
+                  try {
+                    callback(entries, observer);
+                  } catch (err) {
+                    if (!isResizeError(err && err.message)) {
+                      console.error(err);
+                    }
+                  }
+                });
+              });
+            };
+            window.ResizeObserver.prototype = NativeRO.prototype;
+          }
+        }
+      })();
+    </script>
+    <title>NodeBrief Studio – Visual Relational Schema &amp; Node Architecture Generator</title>
+    
+    <!-- Primary SEO Meta Tags -->
+    <meta name="title" content="NodeBrief Studio – Visual Relational Schema &amp; Node Architecture Generator" />
+    <meta name="description" content="Ultra-minimalist visual node diagramming and relational schema generator for engineering workflows. Design entity architectures and generate PostgreSQL DDL, Prisma schemas, TypeScript types, and JSON schemas instantly." />
+    <meta name="keywords" content="ERD, entity relationship diagram, database schema builder, visual schema generator, postgresql schema tool, prisma generator, typescript interface generator, node architecture, sql ddl creator, database modeling tool" />
+    <meta name="author" content="NodeBrief" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#0F172A" />
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/x-icon" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- OpenGraph / Facebook / LinkedIn / Slack Social Share Preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ais-pre-l2vwhmropp25z5rsumjczl-67284500055.europe-west2.run.app/" />
+    <meta property="og:site_name" content="NodeBrief Studio" />
+    <meta property="og:title" content="NodeBrief Studio – Visual Relational Schema &amp; Node Architecture Generator" />
+    <meta property="og:description" content="Ultra-minimalist visual node diagramming and relational schema generator for engineering workflows. Design entity architectures and generate PostgreSQL DDL, Prisma schemas, TypeScript types, and JSON schemas instantly." />
+    <meta property="og:image" content="https://ais-pre-l2vwhmropp25z5rsumjczl-67284500055.europe-west2.run.app/og-image.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="NodeBrief Studio - Visual Relational Schema &amp; Node Architecture Generator preview" />
+
+    <!-- Twitter / X Card Preview -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://ais-pre-l2vwhmropp25z5rsumjczl-67284500055.europe-west2.run.app/" />
+    <meta name="twitter:title" content="NodeBrief Studio – Visual Relational Schema &amp; Node Architecture Generator" />
+    <meta name="twitter:description" content="Ultra-minimalist visual node diagramming and relational schema generator for engineering workflows. Generate SQL, Prisma, TypeScript &amp; JSON schemas." />
+    <meta name="twitter:image" content="https://ais-pre-l2vwhmropp25z5rsumjczl-67284500055.europe-west2.run.app/og-image.svg" />
+    <meta name="twitter:image:alt" content="NodeBrief Studio - Visual Relational Schema &amp; Node Architecture Generator" />
+
+    <!-- AI & LLM Search Engine Optimization Reference -->
+    <link rel="help" href="/llms.txt" type="text/plain" title="LLM context document" />
+
+    <!-- Schema.org JSON-LD Structured Data for Search Engines & LLMs -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "@id": "https://ais-pre-l2vwhmropp25z5rsumjczl-67284500055.europe-west2.run.app/#webapp",
+            "name": "NodeBrief Studio",
+            "url": "https://ais-pre-l2vwhmropp25z5rsumjczl-67284500055.europe-west2.run.app/",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "All",
+            "description": "Ultra-minimalist visual node diagramming and relational schema generator for engineering workflows. Design entity architectures and generate PostgreSQL DDL, Prisma schemas, TypeScript types, and JSON schemas instantly.",
+            "browserRequirements": "Requires JavaScript. Requires HTML5.",
+            "softwareVersion": "1.0.0",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "featureList": [
+              "Interactive entity-relationship node canvas",
+              "Automatic Dagre hierarchical graph layout",
+              "Live PostgreSQL SQL DDL generation",
+              "Prisma schema generation",
+              "TypeScript interface compilation",
+              "JSON Schema Draft-07 generation",
+              "Custom cardinality configuration (1:1, 1:N, M:N)",
+              "Export to SQL, Prisma, TypeScript, JSON, and PNG"
+            ]
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "name": "NodeBrief Schema Modeler",
+            "programmingLanguage": ["TypeScript", "SQL", "Prisma"],
+            "runtimePlatform": "Browser"
+          }
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body class="h-full overflow-hidden bg-white font-sans text-slate-900 antialiased selection:bg-[#FF0071] selection:text-white">
+    <div id="root" class="h-full"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
