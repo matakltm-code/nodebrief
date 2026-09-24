@@ -185,3 +185,15 @@ NodeBrief implements a comprehensive discoverability layer for both human search
   - `src/tests/ProjectDatabase.test.ts`: Local storage multi-project initialization and serialization.
   - `src/tests/Export.test.ts`: Schema markdown, TypeScript, and SQL compilation pipelines.
   - `src/tests/RightOutputPanel.test.tsx`: Dual-tab switching, code generator toggles, and clipboard copying.
+
+---
+
+## 8. Core Pivot to Idea-Validation Framework 💡
+
+### 1. Architectural Intent Shift
+- **Problem Statement:** The initial engine generated infrastructure artifacts (SQL, Prisma schemas) too early in the ideation phase, forcing engineers into concrete implementation structures before validating user needs.
+- **Architectural Solution:** Pivoted the generation engine to treat canvas maps as abstract conceptual entities, transforming the downstream compiler into a strategic prompt pipeline for Large Language Models (LLMs).
+
+### 2. Strategic Portfolio Impact
+- Documenting this shift shows hiring managers that you understand engineering efficiency: avoiding building code for unvalidated ideas.
+- It highlights your knowledge of context window engineering—using custom canvas topologies to feed high-fidelity context maps directly into generative AI systems for rapid business analysis.
