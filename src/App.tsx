@@ -450,7 +450,7 @@ export default function App() {
   };
 
   return (
-    <div className="flex flex-col h-screen w-screen overflow-hidden bg-white text-slate-900 select-none">
+    <div className="flex flex-col h-screen h-[100dvh] w-screen overflow-hidden bg-white text-slate-900 select-none">
       {/* 1. Global Header with Multi-Project Dropdown & Auto-Save */}
       <Header
         projectName={projectName}
@@ -514,7 +514,7 @@ export default function App() {
       </main>
 
       {/* Mobile Drawer Trigger Bar */}
-      <div className="md:hidden border-t border-slate-200 bg-white px-3 py-1.5 flex items-center justify-between z-30 shrink-0">
+      <div className="md:hidden border-t border-slate-200 bg-white px-3.5 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom,0px))] flex items-center justify-between z-30 shrink-0">
         <div className="flex items-center gap-1.5 font-mono">
           <span className="text-[11px] font-semibold text-slate-800">{nodes.length} Entities</span>
           <span className="text-slate-300">•</span>
@@ -523,9 +523,9 @@ export default function App() {
         <button
           type="button"
           onClick={() => setIsMobileOutputOpen(true)}
-          className="flex items-center gap-1 px-2.5 py-1 bg-slate-900 text-white rounded text-[11px] font-medium shadow-2xs active:scale-95 transition-all"
+          className="flex items-center gap-1 px-3 py-1.5 bg-slate-900 text-white rounded text-[11px] font-medium shadow-2xs active:scale-95 transition-all cursor-pointer"
         >
-          <Sparkles className="w-3 h-3 text-[#FF0071]" />
+          <Sparkles className="w-3.5 h-3.5 text-[#FF0071]" />
           <span>View Schema &amp; Prompts</span>
         </button>
       </div>

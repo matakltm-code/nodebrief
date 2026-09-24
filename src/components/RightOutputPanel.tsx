@@ -310,7 +310,7 @@ ${instructionTarget}`;
           </div>
 
           {/* Formatted Markdown Output Representation */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 font-sans text-xs">
+          <div className="flex-1 overflow-y-auto p-4 pb-12 space-y-4 font-sans text-xs">
             <div className="pb-3 border-b border-slate-100">
               <h1 className="text-base font-bold text-slate-900 tracking-tight">
                 # Schema: {projectName.trim() || 'Untitled Project'} Entity Graph
@@ -396,7 +396,7 @@ ${instructionTarget}`;
 
       {/* TAB 2: AI PROMPT GENERATOR */}
       {activeTab === 'prompt' && (
-        <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-3 font-sans text-xs animate-in fade-in duration-200">
+        <div className="flex-1 overflow-y-auto p-4 pb-12 flex flex-col gap-3 font-sans text-xs animate-in fade-in duration-200">
           {/* Target Framework Selector */}
           <div className="p-2.5 bg-slate-50/60 border border-slate-200 rounded-lg flex flex-col gap-2 shrink-0">
             <div className="flex items-center justify-between">

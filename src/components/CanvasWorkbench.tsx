@@ -474,24 +474,24 @@ function FlowCanvasInner({
 
       {/* Bottom-Left Controls */}
       <div className="absolute bottom-3.5 left-3.5 z-20 flex items-center gap-2">
-        <div className="flex flex-col bg-white border border-slate-200 rounded-lg shadow-sm overflow-hidden">
+        <div className="flex flex-col bg-white/95 backdrop-blur-sm border border-slate-200/90 rounded-lg shadow-md overflow-hidden">
           <button
             type="button"
             onClick={handleZoomInClick}
-            className="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+            className="p-1.5 text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
             title="Zoom In"
           >
             <Plus className="w-3.5 h-3.5" />
           </button>
           <div className="w-full h-[1px] bg-slate-100" />
-          <div className="px-1 py-0.5 text-[9px] font-mono text-slate-500 text-center select-none leading-none">
+          <div className="px-1.5 py-0.5 text-[9px] font-mono text-slate-600 font-semibold text-center select-none leading-none bg-slate-50/50">
             {Math.round(zoom * 100)}%
           </div>
           <div className="w-full h-[1px] bg-slate-100" />
           <button
             type="button"
             onClick={handleZoomOutClick}
-            className="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+            className="p-1.5 text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
             title="Zoom Out"
           >
             <Minus className="w-3.5 h-3.5" />
@@ -500,7 +500,7 @@ function FlowCanvasInner({
           <button
             type="button"
             onClick={handleFitViewClick}
-            className="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+            className="p-1.5 text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
             title="Fit to Screen"
           >
             <Maximize2 className="w-3.5 h-3.5" />
@@ -512,7 +512,7 @@ function FlowCanvasInner({
             className={`p-1.5 transition-colors ${
               isCanvasLocked
                 ? 'text-[#FF0071] bg-pink-50'
-                : 'text-slate-400 hover:text-slate-800 hover:bg-slate-50'
+                : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
             }`}
             title={isCanvasLocked ? 'Unlock Canvas' : 'Lock Canvas'}
           >
@@ -523,6 +523,16 @@ function FlowCanvasInner({
             )}
           </button>
         </div>
+      </div>
+
+      {/* Bottom-Right Canvas Topology Indicator */}
+      <div className="absolute bottom-3.5 right-3.5 z-20 hidden sm:flex items-center gap-2 px-2.5 py-1 bg-white/95 backdrop-blur-sm border border-slate-200/90 rounded-lg shadow-xs font-mono text-[10px] text-slate-500">
+        <span className="flex items-center gap-1 text-slate-800 font-medium">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#FF0071]" />
+          {nodes.length} {nodes.length === 1 ? 'Entity' : 'Entities'}
+        </span>
+        <span className="text-slate-300">•</span>
+        <span>{edges.length} {edges.length === 1 ? 'Relation' : 'Relations'}</span>
       </div>
     </section>
   );
