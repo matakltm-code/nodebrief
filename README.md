@@ -1,5 +1,7 @@
 # NodeBrief ⚡
 
+<img width="1280" height="800" alt="image" src="https://github.com/user-attachments/assets/59a7884d-ed52-4e24-a948-519640028eae" />
+
 > **Ultra-Minimalist Visual Entity Modeling & Relational Schema Compiler**  
 > Transform visual topology graphs into production-ready data schemas and structured LLM system prompts in real time.
 
