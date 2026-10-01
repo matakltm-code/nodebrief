@@ -1,0 +1,114 @@
+1. PROJECT OVERVIEW
+- Project Name: nodebrief
+- Project Repo URL: https://github.com/matakltm-code/nodebrief.git
+- Demo Site URL: Not Available / To Be Added
+
+2. MOTIVATION & OBJECTIVE
+NodeBrief was created to bridge the gap between initial visual architecture ideation and immediate schema/prompt generation for modern software engineering workflows. Traditionally, database modeling and relational schema design involve manually sketching entity topologies on whiteboards or canvas tools, followed by tedious, error-prone manual translation into database DDL, Prisma schemas, TypeScript interfaces, and prompt engineering context for AI coding assistants.
+
+NodeBrief solves this problem by providing an ultra-minimalist, local-first visual canvas workbench. As developers design, drag, and interconnect entity nodes, NodeBrief synchronously compiles the graph topology into production-ready declarative schema formats (Markdown, Prisma, SQL DDL, TypeScript) and hardened LLM context prompts in real time. The platform eliminates context-switching, accelerates system architecture design, and empowers engineers to feed structured context maps directly into AI code generation engines for rapid idea validation.
+
+3. TECH STACK & ARCHITECTURE
+Languages & Runtime Environment:
+- TypeScript 5.x (Strict compiler mode with strictNullChecks, noUnusedLocals, and noUnusedParameters)
+- JavaScript (ESNext / Vite ESM)
+- Node.js (v20+ recommended)
+- HTML5 / CSS3
+
+Front-End Framework & UI Libraries:
+- React 19 (v19.0.1)
+- Vite 8.3 / Vite 6 (@vitejs/plugin-react) for fast bundling and HMR
+- Tailwind CSS v4 (@tailwindcss/vite v4.3.3) for modern utility-first styling and design tokens
+- @xyflow/react (v12.11.6) for visual node graph canvas, handles, custom nodes, custom edges, and interactive reconnection
+- Lucide React (v0.546.0) for iconography
+- Motion (v12.23.24) for smooth UI drawer animations and state transitions
+
+Graph Algorithms & Layout Engine:
+- Dagre (v0.8.5) for automated hierarchical node layout calculations in Horizontal (LR) and Vertical (TB) orientations
+
+Data Serialization & Parsing:
+- js-yaml (v5.4.2) for YAML serialization and export/import validation
+- dotenv (v17.2.3) for environment configuration
+
+AI & LLM Integration:
+- @google/genai (v2.4.0) for optional Gemini AI prompt generation and assistance
+
+Testing & Code Quality:
+- Vitest (v5.0.1) for fast unit test execution
+- Testing Library (@testing-library/react, @testing-library/jest-dom) for component testing
+- jsdom (v30.1.1) for DOM emulation during testing
+- TypeScript Compiler (`tsc --noEmit`) for strict static type checking
+
+Architectural Patterns:
+- Local-First Architecture: In-memory visual graph state synchronized with 500ms debounced browser localStorage persistence (`nodebrief_projects_v1`).
+- Compiler AST Pipeline: Decoupled translation engine taking graph nodes and edges and producing structured Markdown, Prisma, SQL DDL, TypeScript Zod targets, and LLM system prompt ASTs.
+- Custom Hook Decomposition: Clear separation of state orchestration (`App.tsx`), project storage management (`useProjectManager`), snapshot history management (`useHistoryState`), and keyboard hotkeys (`useCanvasShortcuts`).
+- Component Architecture: Clean separation between canvas elements (`SchemaNodeComponent`, `RelationEdgeComponent`), controls (`CanvasWorkbench`), compilation panel (`RightOutputPanel`), and dialog modals (`AddNodeModal`, `AddRelationModal`, `EditRelationModal`, `ExportModal`, `ImportModal`, `ConfirmationModal`).
+
+4. ACCOMPLISHED FEATURES
+Visual Canvas & Node Graph Editor:
+- Distraction-free, ultra-minimalist pure white canvas UI with grid controls, zoom, and pan capabilities.
+- Custom Schema Entity Cards with color-coded node category tags (`primary`, `active`, `taxonomy`, `relation`, `custom`).
+- Declarative field management per node, allowing addition, editing, type assignment, and field deletion.
+- Attribute key indicators including Primary Keys (`[pk]`), Foreign Keys (`[ref: > Target.id]`), custom types, slug attributes, enums, and timestamp flags.
+
+Relationship & Connection Management:
+- Custom relation edges with interactive cardinality badges (`1:N`, `M:N`, `1:1`).
+- Interactive edge reconnection: Drag and re-anchor existing connection lines to different entity handles dynamically.
+- Relationship Editor Modal: Double-click relation paths or badges to customize source/target entities, labels, cardinality, stroke line styles (solid/dashed), and curve path styles (bezier/smoothstep).
+
+Automated Hierarchical Layout:
+- One-click Dagre automated graph layout supporting horizontal (Left-to-Right) and vertical (Top-to-Bottom) directional alignment.
+- Dynamic node height computation based on field count ($H = 48 + |fields| \times 28 \text{ px}$) to prevent visual overlapping and line clipping.
+
+Real-Time Multi-Format Schema Compiler:
+- Live synchronization between canvas graph updates and compiled output in real time.
+- Markdown Schema Specification (`schema.md` / `schema.txt`) with relational data tables and explicit relationship lists.
+- Prisma Schema DDL ready for ORM usage.
+- PostgreSQL DDL SQL syntax scripts with foreign key constraints.
+- Strongly typed TypeScript Interfaces targeting Zod validation schemas.
+- Hardened LLM Context Injections: Structured prompt templates embedding graph entity attributes and cardinalities for AI code generators.
+- One-click copy-to-clipboard and direct file downloads for generated schemas.
+
+Multi-Project Storage & Local Persistence:
+- Local-first multi-project management supporting project creation, switching, renaming, and deletion without page reloads.
+- Non-blocking 500ms debounced auto-save engine targeting localStorage.
+- Modal delete confirmation safeguards preventing accidental data loss.
+
+Import, Export & Portability:
+- Full canvas graph state serialization to structured JSON and YAML formats.
+- Import/Export dialogs with payload validation and strict TypeScript type guards (`isCanvasExportPayload`).
+
+Canvas History & Keyboard Navigation:
+- Multi-level undo and redo stack supporting `Ctrl+Z`, `Ctrl+Y`, and `Ctrl+Shift+Z` up to 30 snapshot levels.
+- Focus-aware keyboard listeners that automatically suspend canvas shortcuts when typing in input fields, textareas, or modal forms.
+
+SEO & Machine Discoverability:
+- OpenGraph and Twitter social card tags embedded in `index.html`.
+- Standard `favicon.svg`, `robots.txt`, and `sitemap.xml`.
+- Special `/llms.txt` file providing machine-readable documentation for AI crawler agents.
+
+Responsive Desktop & Mobile Design:
+- Split desktop workbench layout (60% canvas / 40% compiler output panel).
+- Mobile-optimized responsive layout featuring a full-screen visual canvas and a fluid slide-up bottom-sheet compiler drawer (`h-[85vh]`).
+
+5. COMPLEX CHALLENGES & ARCHITECTURAL HIGHLIGHTS
+Real-Time Multi-Target Schema Compilation Engine:
+- Challenge: Generating precise, syntactically correct output across multiple target formats (Markdown, Prisma, SQL DDL, TypeScript, LLM System Prompts) from fluid React Flow node/edge graphs in real time without lag.
+- Solution: Engineered a synchronous, deterministic AST compiler pipeline in `src/components/RightOutputPanel.tsx` and compiler utilities. The engine evaluates node attribute arrays, maps Primary and Foreign Key references to target entities, calculates relationship cardinalities, and formats multi-target outputs synchronously whenever node or edge arrays change.
+
+Dynamic Dagre Auto-Layout with Height Calculations & Coordinate Guards:
+- Challenge: Laying out entity nodes cleanly when node heights vary dynamically based on the number of fields, avoiding overlap and invalid coordinate values.
+- Solution: Built `src/utils/dagreLayout.ts` integrating the Dagre graph library. Dynamically calculates entity card dimensions using field-count formulas ($H = 48 + |fields| \times 28 \text{ px}$) and applies safe separation margins. Added `Number.isFinite()` validation guards across all calculated coordinates to eliminate `NaN` outputs prior to setting state in @xyflow/react.
+
+Interactive Reconnectable Relation Edges:
+- Challenge: Allowing users to drag and reconnect existing edge handles on the visual canvas while preserving relation labels, stroke styles, curve paths, and cardinality mappings.
+- Solution: Implemented a custom typed React Flow edge component (`RelationEdgeComponent.tsx`) and custom reconnection handlers in `CanvasWorkbench.tsx`. The handler captures handle re-anchoring, validates target node connections, updates the underlying `SchemaEdge` state model, and maintains connection labels and badge positioning.
+
+Debounced Local-First Multi-Project Storage Engine:
+- Challenge: Maintaining fast, responsive UI interactions during heavy canvas editing while ensuring local storage remains in sync without causing disk churn or performance degradation.
+- Solution: Implemented `useProjectManager` with a 500ms debounced persistence loop. Mutations update local state immediately for zero UI latency, while disk writes to `localStorage` under `nodebrief_projects_v1` are throttled, supporting instant project switching and error recovery.
+
+Focus-Aware Undo/Redo Snapshot History Manager:
+- Challenge: Providing seamless undo/redo for graph topology mutations without capturing every text field keystroke or interfering with text input controls inside modals and fields.
+- Solution: Created `useHistoryState` for deep-cloned immutable graph snapshots (up to 30 history states) and paired it with `useCanvasShortcuts`. The hotkey listener inspects `document.activeElement` and ignores key combinations when focused on `INPUT`, `TEXTAREA`, or `SELECT` elements.
